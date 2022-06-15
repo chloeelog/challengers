@@ -27,6 +27,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import Home from './src/Components/Screens/Home';
+import Certification from './src/Components/Screens/Certification';
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
 const Section: React.FC<{
   title: string;
 }> = ({children, title}) => {
@@ -55,13 +65,12 @@ const Section: React.FC<{
   );
 };
 
-const App = () => {
+const Guide = () => {
   const isDarkMode = useColorScheme() === 'dark';
-
+  
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -73,7 +82,7 @@ const App = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
+          <Section title="Step One ++ ">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
@@ -90,6 +99,18 @@ const App = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
+  )
+}
+
+const App = () => {
+
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Cert" component={Certification} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
