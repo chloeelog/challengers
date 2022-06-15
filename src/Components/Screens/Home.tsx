@@ -15,7 +15,12 @@ const Home: React.FC = () => {
 
   return (
     <Tab.Navigator>
-      <Tab.Screen name="인기" children={() => <ChallengeList category="popular" />}/>
+      <Tab.Screen name="운동" children={() => <ChallengeList category="운동" />}/>
+      <Tab.Screen name="식습관" children={() => <ChallengeList category="식습관" />}/>
+      <Tab.Screen name="생활" children={() => <ChallengeList category="생활" />}/>
+      <Tab.Screen name="정서" children={() => <ChallengeList category="정서" />}/>
+      <Tab.Screen name="취미" children={() => <ChallengeList category="취미" />}/>
+      <Tab.Screen name="환경" children={() => <ChallengeList category="환경" />}/>
     </Tab.Navigator>
   )
 }
