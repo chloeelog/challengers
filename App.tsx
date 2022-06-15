@@ -31,11 +31,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import Home from './src/Components/Screens/Home';
 import Certification from './src/Components/Screens/Certification';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+const queryClient = new QueryClient();
 
 const Section: React.FC<{
   title: string;
@@ -105,12 +109,14 @@ const Guide = () => {
 const App = () => {
 
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Cert" component={Certification} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Cert" component={Certification} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 };
 
