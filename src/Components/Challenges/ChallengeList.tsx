@@ -1,27 +1,32 @@
 import React from "react";
-import { FlatList, ScrollView, Text } from "react-native";
-
+import { FlatList } from "react-native";
 import { useQuery } from "react-query";
+
 import styled from "styled-components/native";
 
-import request from "../../Api/api";
-
-import { ChallengeType } from "../../Types/challenge";
 import Challenge from "./ChallengeInChallengeList";
 
+import { fetchChallenges } from "../../utils/apis/fetchChallenges";
+
+import { Category } from "../../utils/types/category";
+import { ChallengeType } from "../../utils/types/challenge";
+import { ChallengesApiReponse } from "../../utils/types/apiResponse";
+
+
 type ChallengeListProps = {
-  category: string;
+  category: Category,
 }
 
 const ChallengeList = ({ category }: ChallengeListProps) => {
-
-  const { data } = useQuery(category, () => request({ category }))
+  const query = useQuery(category, () => fetchChallenges<ChallengesApiReponse>({ category }))
+  const { data: axiosResponse } = query;
+  const sampleChallenges = axiosResponse?.data;
 
   return (
     <Container>
-      {data && <FlatList
-        data={data.data.data.challenges}
-        renderItem={({ item }) => <Challenge {...item}/>}
+      {sampleChallenges && <FlatList
+        data={sampleChallenges.data.challenges}
+        renderItem={({ item }: { item: ChallengeType }) => <Challenge { ...item } />}
         numColumns={2}
       />}
     </Container>

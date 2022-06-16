@@ -29,15 +29,14 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { Provider } from 'react-redux';
+import store from './src/store/config';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import Home from './src/Components/Screens/Home';
-import Certification from './src/Components/Screens/Certification';
-
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+import Root from './src/components/screens/Root';
+import Cart from './src/components/screens/Cart';
 
 const queryClient = new QueryClient();
 
@@ -107,16 +106,25 @@ const Guide = () => {
 }
 
 const App = () => {
+  const Stack = createNativeStackNavigator();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Cert" component={Certification} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen 
+              name="챌린저스" 
+              component={Root} 
+              options={{
+                headerShown: false
+              }} 
+            />
+            <Stack.Screen name="장바구니" component={Cart} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
+    </Provider>
   );
 };
 
