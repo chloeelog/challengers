@@ -48,6 +48,7 @@ Challengers App clone with React-Native
 - 🟢 Redux를 이용하여 참가중인 챌린지 상태관리 구현
 - 🟢 참가하기 버튼 기능 구현
   - 🟢 참가중인 경우 버튼 비활성화 구현
+- 🟢 참가 휘소하기 버튼 기능 구현
 
 ### 장바구니 스크린
 
