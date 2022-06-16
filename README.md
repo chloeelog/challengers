@@ -12,7 +12,9 @@ Challengers App clone with React-Native
 > 🔴 Undone: 구현하지 못한 것
 
 ### 네비게이션
-- 🟢 전체 앱 Bottom Navigation 구현
+- 🟢 전체 앱 Stack Navigation 구현
+  - 🟠 네비게이션 Header 경우에 따라 보이거나 보이지 않게 스타일링
+- 🟢 Root Screen의 Bottom Navigation 구현
 - 🟡 Bottom Navigation 아이콘 스타일링
 - 🟡 Bottom Navigation이 제공하는 Screen Title 부분 스타일링
   - 각 상세 탭 타이틀이 노출되는 대신 앱 타이틀과 (챌린지 스크린의 경우) 장바구니가 노출되도록 할 것!
@@ -26,6 +28,10 @@ Challengers App clone with React-Native
     - 기존 React Query가 제공하는 것이 있다면 이용해보는 방법을 찾아볼 것!
     - Image에서도 defaultImage를 이용해 로딩 UI를 만들 수 있는 것 같은데, 그렇다면 Suspense의 사용은 불필요한 엔지니어링이 아닐까? 우선 주어진 기능들을 충실하게 활용할 수 있도록 해보자.
 - 🟢 챌린지 목록 그리드 스타일링 - FlatListView 이용
+
+### 장바구니 스크린
+- 🟢 챌린지 탭 내 헤더에 장바구니 버튼 구현 및 네비게이팅
+  - 🟠 헤더 장바구니 아이콘 스타일링
 
 
 #### 챌린지 컴포넌트 
