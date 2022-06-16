@@ -30,6 +30,9 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { Provider } from 'react-redux';
+import store from './src/store/config';
+
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import Root from './src/components/screens/Root';
@@ -106,20 +109,22 @@ const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen 
-            name="챌린저스" 
-            component={Root} 
-            options={{
-              headerShown: false
-            }} 
-          />
-          <Stack.Screen name="장바구니" component={Cart} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen 
+              name="챌린저스" 
+              component={Root} 
+              options={{
+                headerShown: false
+              }} 
+            />
+            <Stack.Screen name="장바구니" component={Cart} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
+    </Provider>
   );
 };
 
