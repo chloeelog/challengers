@@ -1,5 +1,4 @@
 import React from "react";
-import { Text, View } from "react-native";
 
 import { ChallengeType } from "../../Types/challenge";
 import styled from "styled-components/native";
@@ -13,7 +12,6 @@ const Challenge: React.FC<ChallengeType> = ({
   registerCount,
   type,
 }) => {
-  // console.log(thumbnailImageUrl)
   return (
     <Container>
       <Thumbnail source={{uri: thumbnailImageUrl}}/>

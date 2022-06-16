@@ -1,9 +1,6 @@
 import axios from "axios";
-import { useQuery } from "react-query";
-import { Category } from "../Types/category";
 
 type RequestParameters = {
-  // category?: Category;
   category?: string;
   offset?: number;
   limit?: number;
@@ -16,9 +13,5 @@ const request = (params: RequestParameters) => axios({
   url: BASE_URL,
   params: params,
 })
-
-async function fetchData(params: RequestParameters) {
-  return await request(params);
-}
 
 export default request;
