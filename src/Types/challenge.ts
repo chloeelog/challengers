@@ -1,4 +1,4 @@
-export type Challenge = {
+export type ChallengeType = {
   category: string,
   endDate: string,
   id: number,
