@@ -27,7 +27,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -110,12 +110,23 @@ const Guide = () => {
 
 const App = () => {
   const Stack = createNativeStackNavigator();
+  // const navigation = useNavigation();
+  
+  // function onCartPress() {
+  //   navigation.navigate("장바구니");
+  // }
 
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="챌린저스" component={Root} />
+          <Stack.Screen 
+            name="챌린저스" 
+            component={Root} 
+            options={{
+              headerShown: false
+            }} 
+          />
           <Stack.Screen name="장바구니" component={Cart} />
         </Stack.Navigator>
       </NavigationContainer>
