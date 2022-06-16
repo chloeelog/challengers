@@ -37,6 +37,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import Root from './src/components/screens/Root';
 import Cart from './src/components/screens/Cart';
+import ChallengeDetail from './src/components/screens/ChallengeDetail';
 
 const queryClient = new QueryClient();
 
@@ -121,6 +122,7 @@ const App = () => {
               }} 
             />
             <Stack.Screen name="장바구니" component={Cart} />
+            <Stack.Screen name="챌린지 정보" component={ChallengeDetail} />
           </Stack.Navigator>
         </NavigationContainer>
       </QueryClientProvider>
