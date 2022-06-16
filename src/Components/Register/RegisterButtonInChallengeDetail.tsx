@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 
 import styled from "styled-components/native";
@@ -14,29 +14,31 @@ type RegisterButtonProps = {
 }
 
 const RegisterButton: React.FC<RegisterButtonProps> = ({ challenge, style }) => {
-  // const { registered } = useAppSelector((state) => state.registerStore);
+  const { registered } = useAppSelector((state) => state.registerStore);
   const dispatch = useAppDispatch();
 
-  // const isRegistered = () => {
-  //   return Boolean(registered.find((item) => item.id === challenge.id));
-  // }
+  const isRegistered = useMemo(() => {
+    return Boolean(registered.find((item) => item.id === challenge.id));
+  }, [registered])
 
   function onPress() {
+    console.log("pressed!")
     dispatch(register(challenge));
   };
 
   return (
     <Container
       style={style}
+      disabled={isRegistered}
       onPress={onPress}
     >
-      <Label>참가하기</Label>
+      <Label>{ isRegistered ? "이미 참여중인 챌린지예요" : "참가하기"}</Label>
     </Container>
   )
 }
 
-const Container = styled.TouchableHighlight`
-  background-color: greenyellow;
+const Container = styled.TouchableHighlight<{ disabled: Boolean }>`
+  background-color: ${(props) => (props.disabled ? "gray" : "greenyellow")};
 
   display: flex;
   justify-content: center;
