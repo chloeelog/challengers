@@ -14,7 +14,7 @@ const Root: React.FC = () => {
   const navigation = useNavigation();
 
   function onCartPress() {
-    navigation.navigate("장바구니");
+    navigation.navigate("Cart");
   }
 
   return (

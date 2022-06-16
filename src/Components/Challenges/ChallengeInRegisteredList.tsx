@@ -2,10 +2,7 @@ import React from "react";
 
 import styled from "styled-components/native";
 
-import CartButton from "../Cart/CartButton";
-
 import { ChallengeType } from "../../utils/types/challenge";
-import RegisterButton from "../Register/RegisterButtonInCart";
 
 const Challenge: React.FC<ChallengeType> = (challenge) => {
   const { title, thumbnailImageUrl, startDate, registerStartDate, registerEndDate, registerCount, type } = challenge;
@@ -14,8 +11,6 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
     <Container>
       <Thumbnail source={{uri: thumbnailImageUrl}} />
       <Title>{title}</Title>
-      <RegisterButton challenge={challenge}/>
-      <CartBtn challenge={challenge} />
     </Container>
   )
 }
@@ -43,11 +38,5 @@ const Thumbnail = styled.Image`
 `
 
 const Title = styled.Text``
-
-const CartBtn = styled(CartButton)`
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-`
 
 export default Challenge;

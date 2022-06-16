@@ -1,11 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { TypedUseSelectorHook } from "react-redux";
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
+
 import cartSlice from "./slices/cartSlice";
+import registerSlice from "./slices/registerSlice";
 
 const rootReducer = combineReducers({
   cartStore: cartSlice.reducer,
+  registerStore: registerSlice.reducer,
 });
 
 const initialState = {};

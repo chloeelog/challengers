@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import styled from "styled-components/native";
 
@@ -8,10 +9,20 @@ import { ChallengeType } from "../../utils/types/challenge";
 
 const Challenge: React.FC<ChallengeType> = (challenge) => {
   const { title, thumbnailImageUrl, startDate, registerStartDate, registerEndDate, registerCount, type } = challenge;
+  
+  const navigation = useNavigation();
+
+  function onChallengePress() {
+    navigation.navigate("ChallengeDetail", {
+      challenge: challenge,
+    });
+  }
 
   return (
-    <Container>
-      <Thumbnail source={{uri: thumbnailImageUrl}} />
+    <Container
+      onPress={onChallengePress}
+    >
+      <Thumbnail source={{ uri: thumbnailImageUrl }} />
       <Registered>{registerCount}</Registered>
       <Title>{title}</Title>
       <CartBtn challenge={challenge} />
@@ -19,7 +30,7 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
   )
 }
 
-const Container = styled.View`
+const Container = styled.TouchableOpacity`
   width: 46%;
   height: 200px;
 
