@@ -13,7 +13,7 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
     <Container>
       <Thumbnail source={{uri: thumbnailImageUrl}} />
       <Title>{title}</Title>
-      <CartBtn type="ADD" challenge={challenge} />
+      <CartBtn challenge={challenge} />
     </Container>
   )
 }

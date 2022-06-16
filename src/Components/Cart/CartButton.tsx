@@ -1,44 +1,46 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 
 import styled from "styled-components/native";
 
-import { useAppDispatch } from "../../store/config";
-import { addToCart } from "../../store/slices/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../store/config";
+import { addToCart, deleteFromCart } from "../../store/slices/cartSlice";
 
 import { ChallengeType } from "../../utils/types/challenge";
 
-type CartButtonType = "ADD" | "DELETE";
-
 type CartButtonProps = {
-  type: CartButtonType,
   challenge: ChallengeType,
   style?: StyleProp<ViewStyle>,
 }
 
-const CartButton = ({ type, challenge, style }: CartButtonProps) => {
+const CartButton = ({ challenge, style }: CartButtonProps) => {
+  const { cart } = useAppSelector((state) => state.cartStore);
   const dispatch = useAppDispatch();
 
+  const isInCart = useMemo(() => {
+    return Boolean(cart.find((item) => item.id === challenge.id));
+  }, [cart, challenge]);
+
   function onPress() {
-    if (type === "ADD") {
-      dispatch(addToCart(challenge))
+    if (isInCart) {
+      dispatch(deleteFromCart(challenge))
     } else {
-      console.log("삭제할게요!")
+      dispatch(addToCart(challenge))
     }
   }
 
   return (
     <Button
-      type={type}
+      isInCart={isInCart}
       style={style}
       onPress={onPress}
     >
-      <Label>{ type === "ADD" ? "추가" : "삭제" }</Label>
+      <Label>{ isInCart ? "삭제" : "추가" }</Label>
     </Button>
   )
 };
 
-const Button = styled.TouchableHighlight<{ type: CartButtonType }>`
+const Button = styled.TouchableHighlight<{ isInCart: Boolean }>`
   width: 30px;
   height: 20px;
 
@@ -46,7 +48,7 @@ const Button = styled.TouchableHighlight<{ type: CartButtonType }>`
   justify-content: center;
   align-items: center;
 
-  background-color: ${(props) => props.type === "ADD" ? "red" : "blue"};
+  background-color: ${(props) => props.isInCart ? "red" : "blue"};
 `
 const Label = styled.Text`
   font-size: 10px;
