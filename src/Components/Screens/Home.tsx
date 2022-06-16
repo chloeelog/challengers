@@ -3,6 +3,7 @@ import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 import ChallengeList from "../Challenges/ChallengeList";
+import Cart from "./Cart";
 
 const Home: React.FC = () => {
   const Tab = createMaterialTopTabNavigator();

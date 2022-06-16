@@ -35,9 +35,11 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import Home from './src/Components/Screens/Home';
 import Certification from './src/Components/Screens/Certification';
+import CartIcon from './src/Components/Cart/CartInHeader';
+import Root from './src/Components/Screens/Root';
+import Cart from './src/Components/Screens/Cart';
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 const queryClient = new QueryClient();
 
@@ -107,14 +109,15 @@ const Guide = () => {
 }
 
 const App = () => {
+  const Stack = createNativeStackNavigator();
 
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Cert" component={Certification} />
-        </Tab.Navigator>
+        <Stack.Navigator>
+          <Stack.Screen name="챌린저스" component={Root} />
+          <Stack.Screen name="장바구니" component={Cart} />
+        </Stack.Navigator>
       </NavigationContainer>
     </QueryClientProvider>
   );
