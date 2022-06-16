@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from "styled-components/native";
 
+import DeregisterButton from "../Register/DeregisterButtonInRegisteredList";
+
 import { ChallengeType } from "../../utils/types/challenge";
 
 const Challenge: React.FC<ChallengeType> = (challenge) => {
@@ -11,6 +13,7 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
     <Container>
       <Thumbnail source={{uri: thumbnailImageUrl}} />
       <Title>{title}</Title>
+      <DeregisterButton challenge={challenge} />
     </Container>
   )
 }
