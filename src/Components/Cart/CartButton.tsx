@@ -1,19 +1,27 @@
 import React from "react";
-import { GestureResponderEvent, StyleProp, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle } from "react-native";
 
 import styled from "styled-components/native";
+
+import { useAppDispatch } from "../../store/config";
+import { addToCart } from "../../store/slices/cartSlice";
+
+import { ChallengeType } from "../../utils/types/challenge";
 
 type CartButtonType = "ADD" | "DELETE";
 
 type CartButtonProps = {
-  type: CartButtonType
+  type: CartButtonType,
+  challenge: ChallengeType,
   style?: StyleProp<ViewStyle>,
 }
 
-const CartButton = ({ type, style }: CartButtonProps) => {
+const CartButton = ({ type, challenge, style }: CartButtonProps) => {
+  const dispatch = useAppDispatch();
+
   function onPress() {
     if (type === "ADD") {
-      console.log("추가할게요!")
+      dispatch(addToCart(challenge))
     } else {
       console.log("삭제할게요!")
     }

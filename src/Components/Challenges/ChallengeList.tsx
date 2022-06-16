@@ -9,6 +9,7 @@ import Challenge from "./ChallengeInChallengeList";
 import { fetchChallenges } from "../../utils/apis/fetchChallenges";
 
 import { Category } from "../../utils/types/category";
+import { ChallengeType } from "../../utils/types/challenge";
 import { ChallengesApiReponse } from "../../utils/types/apiResponse";
 
 
@@ -18,14 +19,14 @@ type ChallengeListProps = {
 
 const ChallengeList = ({ category }: ChallengeListProps) => {
   const query = useQuery(category, () => fetchChallenges<ChallengesApiReponse>({ category }))
-  const { data:axiosResponse } = query;
-  const sampleChallenges = axiosResponse?.data
+  const { data: axiosResponse } = query;
+  const sampleChallenges = axiosResponse?.data;
 
   return (
     <Container>
       {sampleChallenges && <FlatList
         data={sampleChallenges.data.challenges}
-        renderItem={({ item }) => <Challenge {...item}/>}
+        renderItem={({ item }: { item: ChallengeType }) => <Challenge { ...item } />}
         numColumns={2}
       />}
     </Container>

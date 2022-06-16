@@ -12,7 +12,6 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
   return (
     <Container>
       <Thumbnail source={{uri: thumbnailImageUrl}} />
-      <Registered>{registerCount}</Registered>
       <Title>{title}</Title>
       <CartBtn type="ADD" challenge={challenge} />
     </Container>
@@ -20,31 +19,32 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
 }
 
 const Container = styled.View`
-  width: 46%;
-  height: 200px;
+  width: 100%;
+  height: 100px;
 
-  margin: 2%;
+  margin-bottom: 8px;
 
   position: relative;
 
   display: flex;
+  flex-direction: column;
 `
 
 const Thumbnail = styled.Image`
-  width: 100%;
-  height: 60%;
+  width: 40%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
 `
 
 const Title = styled.Text``
 
-const Registered = styled.Text`
-  position: absolute;
-  top: 5px;
-  right: 5px;
-`
-
 const CartBtn = styled(CartButton)`
-  align-self: flex-end;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 `
 
 export default Challenge;
