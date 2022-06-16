@@ -6,10 +6,10 @@ import styled from "styled-components/native";
 
 import Challenge from "./ChallengeInChallengeList";
 
-import { fetchChallenges } from "../../Api/api";
+import { fetchChallenges } from "../../utils/apis/fetchChallenges";
 
-import { Category } from "../../Types/category";
-import { ChallengesApiReponse } from "../../Types/apiResponse";
+import { Category } from "../../utils/types/category";
+import { ChallengesApiReponse } from "../../utils/types/apiResponse";
 
 
 type ChallengeListProps = {

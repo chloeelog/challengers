@@ -27,19 +27,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import Home from './src/Components/Screens/Home';
-import Certification from './src/Components/Screens/Certification';
-import CartIcon from './src/Components/Cart/CartInHeader';
-import Root from './src/Components/Screens/Root';
-import Cart from './src/Components/Screens/Cart';
-
-const Stack = createNativeStackNavigator();
+import Root from './src/components/screens/Root';
+import Cart from './src/components/screens/Cart';
 
 const queryClient = new QueryClient();
 
@@ -110,11 +104,6 @@ const Guide = () => {
 
 const App = () => {
   const Stack = createNativeStackNavigator();
-  // const navigation = useNavigation();
-  
-  // function onCartPress() {
-  //   navigation.navigate("장바구니");
-  // }
 
   return (
     <QueryClientProvider client={queryClient}>

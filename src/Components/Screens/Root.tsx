@@ -6,7 +6,6 @@ import Home from "./Home";
 import Certification from "./Certification";
 
 import CartIcon from "../Cart/CartInHeader";
-import { Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Root: React.FC = () => {

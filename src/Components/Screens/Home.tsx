@@ -4,7 +4,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 
 import ChallengeList from "../Challenges/ChallengeList";
 
-import { Category } from "../../Types/category";
+import { Category } from "../../utils/types/category"
 
 const Home: React.FC = () => {
   const Tab = createMaterialTopTabNavigator();

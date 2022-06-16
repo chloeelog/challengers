@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ChallengeType } from "../../Types/challenge";
+import { ChallengeType } from "../../utils/types/challenge";
 import styled from "styled-components/native";
 
 const Challenge: React.FC<ChallengeType> = ({

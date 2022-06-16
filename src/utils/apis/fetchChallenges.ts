@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { Category } from "../Types/category";
+import { Category } from "../types/category";
 
 type RequestParameters = {
   category?: Category;
