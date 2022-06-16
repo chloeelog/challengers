@@ -3,6 +3,7 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import styled from "styled-components/native";
 
 import { AppStackParamList } from "../../utils/types/paramList";
+import RegisterButton from "../Register/RegisterButtonInChallengeDetail";
 
 const ChallengeDetail: React.FC = () => {
   const { challenge } = useRoute<RouteProp<AppStackParamList, 'ChallengeDetail'>>().params;
@@ -13,20 +14,27 @@ const ChallengeDetail: React.FC = () => {
       <Thumbnail 
         source={{ uri: thumbnailImageUrl }}
       />
-      <RegisterBtn
-        title="참가하기"
-      />
+      <RegisterBtn challenge={challenge} />
     </Container>
   )
 }
 
-const Container = styled.View``
+const Container = styled.View`
+  height: 100%;
+  position: relative;
+`
 
 const Thumbnail = styled.Image`
   width: 100%;
-  height: 60%;
+  height: 40%;
 `
 
-const RegisterBtn = styled.Button``
+const RegisterBtn = styled(RegisterButton)`
+  width: 100%;
+  height: 80px;
+
+  position: absolute;
+  bottom: 0;
+`
 
 export default ChallengeDetail;
