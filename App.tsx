@@ -38,6 +38,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Root from './src/components/screens/Root';
 import Cart from './src/components/screens/Cart';
 import ChallengeDetail from './src/components/screens/ChallengeDetail';
+import { AppStackParamList, ChallengeDetailScreenParamListType } from './src/utils/types/paramList';
+import { ChallengeType } from './src/utils/types/challenge';
 
 const queryClient = new QueryClient();
 
@@ -107,7 +109,7 @@ const Guide = () => {
 }
 
 const App = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<AppStackParamList>();
 
   return (
     <Provider store={store}>
@@ -115,14 +117,26 @@ const App = () => {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen 
-              name="챌린저스" 
+              name="Root"
               component={Root} 
               options={{
                 headerShown: false
               }} 
             />
-            <Stack.Screen name="장바구니" component={Cart} />
-            <Stack.Screen name="챌린지 정보" component={ChallengeDetail} />
+            <Stack.Screen 
+              name="Cart"
+              component={Cart} 
+              options={{
+                title: "장바구니",
+              }}
+            />
+            <Stack.Screen 
+              name="ChallengeDetail" 
+              component={ChallengeDetail}
+              options={({ route }) => ({ 
+                title: route.params.challenge.title,
+              })}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </QueryClientProvider>

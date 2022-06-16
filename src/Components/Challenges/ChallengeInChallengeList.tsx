@@ -13,7 +13,7 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
   const navigation = useNavigation();
 
   function onChallengePress() {
-    navigation.navigate("챌린지 정보", {
+    navigation.navigate("ChallengeDetail", {
       challenge: challenge,
     });
   }
@@ -22,7 +22,7 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
     <Container
       onPress={onChallengePress}
     >
-      <Thumbnail source={{uri: thumbnailImageUrl}} />
+      <Thumbnail source={{ uri: thumbnailImageUrl }} />
       <Registered>{registerCount}</Registered>
       <Title>{title}</Title>
       <CartBtn challenge={challenge} />
