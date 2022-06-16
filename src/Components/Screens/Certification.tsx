@@ -1,7 +1,11 @@
 import React from "react";
 
+import RegisteredList from "../Register/RegisteredList";
+
 const Certification: React.FC = () => {
-  return (<></>);
+  return (
+    <RegisteredList />
+  );
 }
 
 export default Certification;

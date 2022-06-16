@@ -1,6 +1,12 @@
 import React from "react";
-import { StyleProp, Text, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle } from "react-native";
+
 import styled from "styled-components/native";
+
+import { useAppDispatch } from "../../store/config";
+import { deleteFromCart } from "../../store/slices/cartSlice";
+import { register } from "../../store/slices/registerSlice";
+
 import { ChallengeType } from "../../utils/types/challenge";
 
 type RegisterButtonProps = {
@@ -9,8 +15,11 @@ type RegisterButtonProps = {
 }
 
 const RegisterButton: React.FC<RegisterButtonProps> = ({ challenge, style }) => {
+  const dispatch = useAppDispatch();
+  
   function onPress() {
-    console.log("참가할게요!", challenge.title)
+    dispatch(register(challenge));
+    dispatch(deleteFromCart(challenge));
   }
 
   return (
