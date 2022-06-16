@@ -1,8 +1,8 @@
 export enum Category {
-  "운동",
-  "식습관",
-  "생활",
-  "정서",
-  "취미",
-  "환경",
+  Exercise = "운동",
+  Diet = "식습관",
+  Daily = "생활",
+  Mental = "정서",
+  Hobby = "취미",
+  Environment = "환경",
 }

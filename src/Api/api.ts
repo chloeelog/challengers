@@ -1,17 +1,19 @@
 import axios from "axios";
 
+import { Category } from "../Types/category";
+
 type RequestParameters = {
-  category?: string;
+  category?: Category;
   offset?: number;
   limit?: number;
 }
 
-const BASE_URL = `https://06163dx5uc.execute-api.ap-northeast-1.amazonaws.com/dev/api/sample-challenges`
+const BASE_URL = `https://06163dx5uc.execute-api.ap-northeast-1.amazonaws.com/dev/api`
 
-const request = (params: RequestParameters) => axios({
-  method: "get",
-  url: BASE_URL,
-  params: params,
+const Request = axios.create({
+  baseURL: BASE_URL
 })
 
-export default request;
+export const fetchChallenges = <T extends unknown>(params: RequestParameters) => Request.get<T>('/sample-challenges', {
+  params: params
+})
