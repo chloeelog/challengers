@@ -1,6 +1,11 @@
 import React from "react";
-import { StyleProp, Text, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle } from "react-native";
+
 import styled from "styled-components/native";
+
+import { useAppDispatch, useAppSelector } from "../../store/config";
+import { register } from "../../store/slices/registerSlice";
+
 import { ChallengeType } from "../../utils/types/challenge";
 
 type RegisterButtonProps = {
@@ -9,9 +14,16 @@ type RegisterButtonProps = {
 }
 
 const RegisterButton: React.FC<RegisterButtonProps> = ({ challenge, style }) => {
+  // const { registered } = useAppSelector((state) => state.registerStore);
+  const dispatch = useAppDispatch();
+
+  // const isRegistered = () => {
+  //   return Boolean(registered.find((item) => item.id === challenge.id));
+  // }
+
   function onPress() {
-    console.log("참가할게요!", challenge.title)
-  }
+    dispatch(register(challenge));
+  };
 
   return (
     <Container
