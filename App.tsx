@@ -40,6 +40,7 @@ import Cart from './src/components/screens/Cart';
 import ChallengeDetail from './src/components/screens/ChallengeDetail';
 import { AppStackParamList, ChallengeDetailScreenParamListType } from './src/utils/types/paramList';
 import { ChallengeType } from './src/utils/types/challenge';
+import ScreenHeader from './src/components/screens/headers/ScreenHeader';
 
 const queryClient = new QueryClient();
 
@@ -127,7 +128,9 @@ const App = () => {
               name="Cart"
               component={Cart} 
               options={{
-                title: "장바구니",
+                headerTitle: () => (
+                  <ScreenHeader title="장바구니" />
+                ),
               }}
             />
             <Stack.Screen 
@@ -135,6 +138,9 @@ const App = () => {
               component={ChallengeDetail}
               options={({ route }) => ({ 
                 title: route.params.challenge.title,
+                headerTitle: () => (
+                  <ScreenHeader title={route.params.challenge.title} />
+                )
               })}
             />
           </Stack.Navigator>
