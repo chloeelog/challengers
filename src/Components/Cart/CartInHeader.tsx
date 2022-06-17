@@ -1,18 +1,32 @@
 import React from "react";
+import { GestureResponderEvent } from "react-native";
 
-import { Button } from "react-native";
+import styled from "styled-components/native";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { CartAdd } from "../designElements/icons/cart";
 
-const CartIcon: React.FC = ({ onPress }) => {
-  const Stack = createNativeStackNavigator();
+import { theme } from "../../utils/theme/theme";
+
+type CartIconProps = {
+  onPress?: (e:GestureResponderEvent) => void 
+}
+
+const CartIcon: React.FC<CartIconProps> = ({ onPress }) => {
+  const { colorScheme, iconScheme } = theme;
 
   return (
-    <Button
-      onPress={onPress}
-      title="장바구니"
-    />
+    <Button onPress={onPress}>
+      <CartAdd size={iconScheme.tabHeaderIconSize} color={colorScheme.black} />
+    </Button>
   )
 }
+
+const Button = styled.TouchableOpacity`
+  width: 56px;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+`
 
 export default CartIcon;
