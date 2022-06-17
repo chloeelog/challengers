@@ -7,10 +7,10 @@ import store from './src/store/config';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import Root from './src/components/screens/Root';
-import Cart from './src/components/screens/Cart';
-import ChallengeDetail from './src/components/screens/ChallengeDetail';
-import ScreenHeader from './src/components/screens/headers/ScreenHeader';
+import Root from './src/_components/_screens/Root';
+import Cart from './src/_components/_screens/Cart';
+import ChallengeDetail from './src/_components/_screens/ChallengeDetail';
+import ScreenHeader from './src/_components/_screens/headers/ScreenHeader';
 
 import { AppStackParamList } from './src/utils/types/paramList';
 
