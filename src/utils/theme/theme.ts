@@ -1,5 +1,6 @@
 const colorScheme = {
   primary: "rgb(255, 66, 67)", // "#ff4243"
+  primaryBackground: "rgb(255, 230, 230)", //"ffe6e6"
   secondary: "rgb(255, 140, 2)", // "#ff8c02"
   white: "rgb(256, 256, 256)", // "#ffffff"
   black: "rgb(0, 0, 0)", // "#00000"

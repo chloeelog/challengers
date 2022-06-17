@@ -4,10 +4,13 @@ import { StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
 
 import { useAppDispatch } from "../../store/config";
-import { deleteFromCart } from "../../store/slices/cartSlice";
 import { deregister } from "../../store/slices/registerSlice";
 
 import { ChallengeType } from "../../utils/types/challenge";
+
+import { theme } from "../../utils/theme/theme";
+
+const { colorScheme, fontScheme } = theme
 
 type DeregisterButtonProps = {
   challenge: ChallengeType,
@@ -26,16 +29,16 @@ const DeregisterButton: React.FC<DeregisterButtonProps> = ({ challenge, style })
       style={style}
       onPress={onPress}
     >
-      <Label>취소하기</Label>
+      <Label>참가취소</Label>
     </Container>
   )
 }
 
 const Container = styled.TouchableHighlight`
-  width: 160px;
+  width: 80px;
   height: 40px;
 
-  background-color: greenyellow;
+  background-color: ${ colorScheme.primary };
 
   display: flex;
   justify-content: center;
@@ -43,7 +46,9 @@ const Container = styled.TouchableHighlight`
 `
 
 const Label = styled.Text`
-  font-size: 12px;
+  color: ${ colorScheme.white };
+  font-size: ${ fontScheme.medium };
+  font-weight: 700;
 `
 
 export default DeregisterButton;
