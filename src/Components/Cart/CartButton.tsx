@@ -41,7 +41,7 @@ const CartButton = ({ challenge, style }: CartButtonProps) => {
       onPress={onPress}
     >
       <Label>{ isInCart 
-        ? <CartDelete color={colorScheme.gray} size={iconScheme.buttonIconSize} />
+        ? <CartDelete color={colorScheme.black} size={iconScheme.buttonIconSize} />
         : <CartAdd color={colorScheme.white} size={iconScheme.buttonIconSize} />
         }
       </Label>
@@ -57,7 +57,7 @@ const Button = styled.TouchableHighlight<{ isInCart: Boolean }>`
   justify-content: center;
   align-items: center;
 
-  background-color: ${(props) => props.isInCart ? colorScheme.grayTransparent : colorScheme.primary};
+  background-color: ${(props) => props.isInCart ? colorScheme.lightGray : colorScheme.primary};
 `
 const Label = styled.View`
   font-size: 10px;
