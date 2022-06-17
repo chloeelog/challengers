@@ -1,18 +1,30 @@
 import React from "react";
 
-import { Button } from "react-native";
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { CartAdd } from "../designElements/icons/cart";
+import { GestureResponderEvent } from "react-native";
+import styled from "styled-components/native";
 
-const CartIcon: React.FC = ({ onPress }) => {
+type CartIconProps = {
+  onPress?: (e:GestureResponderEvent) => void 
+}
+
+const CartIcon: React.FC<CartIconProps> = ({ onPress }) => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Button
-      onPress={onPress}
-      title="장바구니"
-    />
+    <Button onPress={onPress}>
+      <CartAdd size={20}/>
+    </Button>
   )
 }
+
+const Button = styled.TouchableOpacity`
+  width: 56px;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+`
 
 export default CartIcon;

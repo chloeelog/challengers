@@ -1,8 +1,8 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { IconProps } from "react-native-vector-icons/Icon";
+import { IconStyleProps } from "../../../utils/types/icon";
 
-export const Cart: React.FC<IconProps> = ({ size, color }) => {
+export const Cart: React.FC<IconStyleProps> = ({ size, color }) => {
   return (
     <Icon 
       name="cart"
@@ -12,7 +12,7 @@ export const Cart: React.FC<IconProps> = ({ size, color }) => {
   )
 }
 
-export const CartAdd: React.FC<IconProps> = ({ size, color }) => {
+export const CartAdd: React.FC<IconStyleProps> = ({ size, color }) => {
   return (
     <Icon 
       name="cart-plus"
@@ -22,7 +22,7 @@ export const CartAdd: React.FC<IconProps> = ({ size, color }) => {
   )
 }
 
-export const CartDelete: React.FC<IconProps> = ({ size, color }) => {
+export const CartDelete: React.FC<IconStyleProps> = ({ size, color }) => {
   return (
     <Icon 
       name="cart-remove"

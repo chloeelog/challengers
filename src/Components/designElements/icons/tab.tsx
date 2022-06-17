@@ -1,8 +1,8 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { IconProps } from "react-native-vector-icons/Icon";
+import { IconStyleProps } from "../../../utils/types/icon";
 
-export const HomeTab: React.FC<IconProps> = ({ size, color }) => {
+export const HomeTab: React.FC<IconStyleProps> = ({ size, color }) => {
   return (
     <Icon 
       name="home-variant"
@@ -12,7 +12,7 @@ export const HomeTab: React.FC<IconProps> = ({ size, color }) => {
   )
 }
 
-export const CertificationTab: React.FC<IconProps> = ({ size, color }) => {
+export const CertificationTab: React.FC<IconStyleProps> = ({ size, color }) => {
   return (
     <Icon 
       name="camera-plus"

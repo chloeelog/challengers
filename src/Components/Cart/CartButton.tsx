@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 
 import styled from "styled-components/native";
