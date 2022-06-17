@@ -34,7 +34,7 @@ const Root: React.FC = () => {
           tabBarIcon: ({ focused }) => (
             focused
             ? <HomeTab size={iconScheme.bottomTabIconSize} color={colorScheme.black} />
-            : <HomeTab size={iconScheme.bottomTabIconSize} color={colorScheme.gray} />
+            : <HomeTab size={iconScheme.bottomTabIconSize} color={colorScheme.lightGray} />
           ),
           tabBarActiveTintColor: colorScheme.black,
           headerTitle: () => (
@@ -55,7 +55,7 @@ const Root: React.FC = () => {
           tabBarIcon: ({ focused }) => (
             focused
             ? <CertificationTab size={iconScheme.bottomTabIconSize} color={colorScheme.black} />
-            : <CertificationTab size={iconScheme.bottomTabIconSize} color={colorScheme.gray} />
+            : <CertificationTab size={iconScheme.bottomTabIconSize} color={colorScheme.lightGray} />
           ),
           tabBarActiveTintColor: colorScheme.black,
           headerTitle: () => (

@@ -1,17 +1,22 @@
 import React, { useMemo } from "react";
 import { StyleProp, ViewStyle } from "react-native";
-
 import styled from "styled-components/native";
 
 import { useAppDispatch, useAppSelector } from "../../store/config";
 import { addToCart, deleteFromCart } from "../../store/slices/cartSlice";
 
 import { ChallengeType } from "../../utils/types/challenge";
+import { CartAdd, CartDelete } from "../designElements/icons/cart";
+
+import { theme } from "../../utils/theme/theme";
+
+const { colorScheme, iconScheme } = theme
 
 type CartButtonProps = {
   challenge: ChallengeType,
   style?: StyleProp<ViewStyle>,
 }
+
 
 const CartButton = ({ challenge, style }: CartButtonProps) => {
   const { cart } = useAppSelector((state) => state.cartStore);
@@ -35,22 +40,26 @@ const CartButton = ({ challenge, style }: CartButtonProps) => {
       style={style}
       onPress={onPress}
     >
-      <Label>{ isInCart ? "삭제" : "추가" }</Label>
+      <Label>{ isInCart 
+        ? <CartDelete color={colorScheme.gray} size={iconScheme.buttonIconSize} />
+        : <CartAdd color={colorScheme.white} size={iconScheme.buttonIconSize} />
+        }
+      </Label>
     </Button>
   )
 };
 
 const Button = styled.TouchableHighlight<{ isInCart: Boolean }>`
-  width: 30px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: ${(props) => props.isInCart ? "red" : "blue"};
+  background-color: ${(props) => props.isInCart ? colorScheme.grayTransparent : colorScheme.primary};
 `
-const Label = styled.Text`
+const Label = styled.View`
   font-size: 10px;
 `
 

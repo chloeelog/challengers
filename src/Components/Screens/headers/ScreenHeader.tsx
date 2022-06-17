@@ -24,7 +24,7 @@ const Header = styled.View`
 
 const Title = styled.Text`
   color: ${ colorScheme.black };
-  font-size: ${ fontScheme.medium };
+  font-size: ${ fontScheme.mediumLarge };
   font-weight: 700;
 
   margin-left: 4px;
