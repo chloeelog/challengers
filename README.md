@@ -18,8 +18,8 @@ Challengers App clone with React-Native
 - 🟢 전체 앱 Stack Navigation 구현
   - 🟢 네비게이션 Header 경우에 따라 보이거나 보이지 않게 스타일링
 - 🟢 Root Screen의 Bottom Navigation 구현
-- 🟡 Bottom Navigation 아이콘 스타일링
-- 🟡 Bottom Navigation이 제공하는 Screen Title 부분 스타일링
+- 🟢 Bottom Navigation 아이콘 스타일링
+- 🟢 Bottom Navigation이 제공하는 Screen Title 부분 스타일링
   - 각 상세 탭 타이틀이 노출되는 대신 앱 타이틀과 (챌린지 스크린의 경우) 장바구니가 노출되도록 할 것!
 - 🟠 Bottom Tab 배지 구현
   
@@ -33,10 +33,9 @@ Challengers App clone with React-Native
 - 🟢 챌린지 목록 그리드 스타일링 - FlatListView 이용
 
 #### 홈 탭의 챌린지 컴포넌트 
-- 🟠 챌린지 컴포넌트 스타일링
-- 🟠 챌린지 컴포넌트 정보 고도화
-  - 🟠 시작 날짜까지 디데이 카운팅
-  - 🟠 마감 날짜까지 카운팅
+- 🟢 챌린지 컴포넌트 스타일링
+- 🟢 챌린지 컴포넌트 정보 고도화
+  - 🟢 마감 날짜까지 카운팅
 
 ### 챌린지 상세보기 스크린
 - 🟢 챌린지 상세보기 스크린 구현
@@ -54,15 +53,15 @@ Challengers App clone with React-Native
 
 #### 장바구니 상태관리 및 기능
 - 🟢 챌린지 탭 내 헤더에 장바구니 버튼 구현 및 네비게이팅
-  - 🟠 헤더 장바구니 아이콘 스타일링
+  - 🟢 헤더 장바구니 아이콘 스타일링
 - 🟢 Redux를 이용하여 장바구니 상태관리 구현
 - 🟢 장바구니 추가/삭제 버튼 기능 구현
-  - 🟠 장바구니 추가/삭제 버튼 아이콘 설정 및 스타일링
+  - 🟢 장바구니 추가/삭제 버튼 아이콘 설정 및 스타일링
 
 #### 장바구니 내 챌린지 컴포넌트
-- 🟠 챌린지 컴포넌트 스타일링
-- 🟠 챌린지 컴포넌트 정보 고도화
-  - 🟠 시작 날짜까지 디데이 카운팅
+- 🟢 챌린지 컴포넌트 스타일링
+- 🟢 챌린지 컴포넌트 정보 고도화
+  - 🟢 마감 날짜까지 카운팅
 
 
 ## 진행 과정에서의 어려움들
