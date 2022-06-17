@@ -7,6 +7,7 @@ import Certification from "./Certification";
 
 import CartIcon from "../Cart/CartInHeader";
 import { useNavigation } from "@react-navigation/native";
+import { HomeTab } from "../designElements/icons/tab";
 
 const Root: React.FC = () => {
   const Tab = createBottomTabNavigator();
@@ -23,9 +24,12 @@ const Root: React.FC = () => {
         name="챌린지" 
         children={() => <Home />} 
         options={{
-        headerRight: () => (
-          <CartIcon onPress={onCartPress}/>
-        )
+          tabBarIcon: () => (
+            <HomeTab />
+          ),
+          headerRight: () => (
+            <CartIcon onPress={onCartPress}/>
+          )
         }} 
       />
       <Tab.Screen name="인증하기" component={Certification} />
