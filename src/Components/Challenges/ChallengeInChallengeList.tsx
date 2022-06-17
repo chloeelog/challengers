@@ -6,11 +6,16 @@ import styled from "styled-components/native";
 import CartButton from "../Cart/CartButton";
 
 import { ChallengeType } from "../../utils/types/challenge";
+import { challengeStartDateInfo, challengeDurationInfo } from "../../utils/challengeInfo";
+import ChallengeInfoTag from "../designElements/tags/ChallengeInfoTag";
 
 const Challenge: React.FC<ChallengeType> = (challenge) => {
-  const { title, thumbnailImageUrl, startDate, registerStartDate, registerEndDate, registerCount, type } = challenge;
+  const { title, thumbnailImageUrl, startDate, endDate, registerStartDate, registerEndDate, registerCount, type } = challenge;
   
   const navigation = useNavigation();
+
+  const startDateTag = challengeStartDateInfo(startDate);
+  const durationTag = challengeDurationInfo(startDate, endDate);
 
   function onChallengePress() {
     navigation.navigate("ChallengeDetail", {
@@ -25,6 +30,8 @@ const Challenge: React.FC<ChallengeType> = (challenge) => {
       <Thumbnail source={{ uri: thumbnailImageUrl }} />
       <Registered>{registerCount}</Registered>
       <Title>{title}</Title>
+      <ChallengeInfoTag tag={startDateTag}/>
+      <ChallengeInfoTag tag={durationTag}/>
       <CartBtn challenge={challenge} />
     </Container>
   )
