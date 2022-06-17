@@ -12,7 +12,7 @@ Challengers App clone with React-Native
 > 🔴 Undone: 구현하지 못한 것
 
 ### 디자인 시스템
-- 🟠 챌린저스 BI에 기반한 Color Theme Variables 구현
+- 🟢 챌린저스 BI에 기반한 Color Theme Variables 구현
 
 ### 네비게이션
 - 🟢 전체 앱 Stack Navigation 구현
