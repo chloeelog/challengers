@@ -28,22 +28,6 @@
 		81E7383F285C2D27004A5441 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382F285C2D27004A5441 /* EvilIcons.ttf */; };
 		81E73840285C2D27004A5441 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73830285C2D27004A5441 /* SimpleLineIcons.ttf */; };
 		81E73841285C2D27004A5441 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73831285C2D27004A5441 /* MaterialIcons.ttf */; };
-		81E73843285C3384004A5441 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73822285C2D27004A5441 /* Fontisto.ttf */; };
-		81E73844285C3384004A5441 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73823285C2D27004A5441 /* Octicons.ttf */; };
-		81E73845285C3384004A5441 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73824285C2D27004A5441 /* Feather.ttf */; };
-		81E73846285C3384004A5441 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73825285C2D27004A5441 /* Entypo.ttf */; };
-		81E73847285C3384004A5441 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73826285C2D27004A5441 /* FontAwesome5_Brands.ttf */; };
-		81E73848285C3384004A5441 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73827285C2D27004A5441 /* MaterialCommunityIcons.ttf */; };
-		81E73849285C3384004A5441 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73828285C2D27004A5441 /* AntDesign.ttf */; };
-		81E7384A285C3384004A5441 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73829285C2D27004A5441 /* Foundation.ttf */; };
-		81E7384B285C3384004A5441 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382A285C2D27004A5441 /* Ionicons.ttf */; };
-		81E7384C285C3384004A5441 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382B285C2D27004A5441 /* FontAwesome5_Solid.ttf */; };
-		81E7384D285C3384004A5441 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382C285C2D27004A5441 /* FontAwesome5_Regular.ttf */; };
-		81E7384E285C3384004A5441 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382D285C2D27004A5441 /* FontAwesome.ttf */; };
-		81E7384F285C3384004A5441 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382E285C2D27004A5441 /* Zocial.ttf */; };
-		81E73850285C3384004A5441 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E7382F285C2D27004A5441 /* EvilIcons.ttf */; };
-		81E73851285C3384004A5441 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73830285C2D27004A5441 /* SimpleLineIcons.ttf */; };
-		81E73852285C3384004A5441 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81E73831285C2D27004A5441 /* MaterialIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -328,22 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81E73843285C3384004A5441 /* Fontisto.ttf in Resources */,
-				81E73844285C3384004A5441 /* Octicons.ttf in Resources */,
-				81E73845285C3384004A5441 /* Feather.ttf in Resources */,
-				81E73846285C3384004A5441 /* Entypo.ttf in Resources */,
-				81E73847285C3384004A5441 /* FontAwesome5_Brands.ttf in Resources */,
-				81E73848285C3384004A5441 /* MaterialCommunityIcons.ttf in Resources */,
-				81E73849285C3384004A5441 /* AntDesign.ttf in Resources */,
-				81E7384A285C3384004A5441 /* Foundation.ttf in Resources */,
-				81E7384B285C3384004A5441 /* Ionicons.ttf in Resources */,
-				81E7384C285C3384004A5441 /* FontAwesome5_Solid.ttf in Resources */,
-				81E7384D285C3384004A5441 /* FontAwesome5_Regular.ttf in Resources */,
-				81E7384E285C3384004A5441 /* FontAwesome.ttf in Resources */,
-				81E7384F285C3384004A5441 /* Zocial.ttf in Resources */,
-				81E73850285C3384004A5441 /* EvilIcons.ttf in Resources */,
-				81E73851285C3384004A5441 /* SimpleLineIcons.ttf in Resources */,
-				81E73852285C3384004A5441 /* MaterialIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
